@@ -1,0 +1,43 @@
+<nav>
+  <img src="../../../assets/rusticLogoColor.svg" alt="logo" />
+  <div class="dropdown-toggler" (click)="togglePopupNav()">
+    <i class="lni lni-menu"></i>
+  </div>
+  <ul class="nav-links">
+    <li routerLink="" routerLinkActive="active">home</li>
+    <li routerLink="services" routerLinkActive="active">services</li>
+    <li routerLink="equipment" routerLinkActive="active">equipment</li>
+    <li routerLink="products" routerLinkActive="active">products</li>
+    <li routerLink="contact-us" routerLinkActive="active">contact us</li>
+  </ul>
+</nav>
+
+<div class="side-nav-popup">
+  <ul class="nav-links">
+    <li routerLink="" (click)="togglePopupNav()" routerLinkActive="active">
+      home
+    </li>
+    <li (click)="togglePopupNav()" href="#services">services</li>
+    <li
+      (click)="togglePopupNav()"
+      routerLin="equipment"
+      routerLinkActive="active"
+    >
+      equipment
+    </li>
+    <li
+      (click)="togglePopupNav()"
+      routerLink="products"
+      routerLinkActive="active"
+    >
+      products
+    </li>
+    <li
+      (click)="togglePopupNav()"
+      routerLink="contact-us"
+      routerLinkActive="active"
+    >
+      contact us
+    </li>
+  </ul>
+</div>

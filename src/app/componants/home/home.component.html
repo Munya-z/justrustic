@@ -1,0 +1,71 @@
+<header class="main-page-header">
+  <div class="header-info">
+    <h1 class="header-txt mb-2">just rustic services</h1>
+
+    <p class="normal-txt mb-4">event planing and staffing company</p>
+
+    <button class="main-btn">contact us</button>
+  </div>
+</header>
+
+<section class="services my-4">
+  <p #services class="header-txt mb-4">Our services</p>
+
+  <div class="cards-container">
+    @for(service of servicesOferred; track service.name){
+
+    <div class="card">
+      <div class="card-header sub-header-txt mb-2">{{ service.name }}</div>
+      <div class="card-body">
+        <p class="mb-2">
+          {{ service.discription }}
+        </p>
+        <hr />
+        <p class="mt-2 mb-1">{{ service.duration }}</p>
+        <p class="mb-2">{{ service.cost }}&nbsp;ZAR</p>
+        <button class="sec-btn">book now</button>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+
+<section class="about-us my-4">
+  <p #services class="header-txt mb-2 txt-cntr">About us</p>
+
+  <div class="about-info mb-4">
+    <p class="normal-text mb-2">
+      Just Rustic Services is a full-service Event Planning Company dedicated to
+      creating unforgettable experiences for a wide range of events. Our
+      experienced team combines creativity with expertise to deliver exceptional
+      service, transforming venues and providing your guests with truly unique
+      experiences. Contact us so we can start working together to plan your
+      perfect event.
+    </p>
+    <button class="main-btn">read more</button>
+  </div>
+
+  <div class="work-gallarey scroller">
+    <div class="scroller-inner">
+      <img
+        src="../../../assets/WhatsApp Image 2024-06-04 at 22.07.06_843e3692.jpg"
+        alt=""
+      />
+
+      <img
+        src="../../../assets/WhatsApp Image 2024-06-04 at 22.07.19_f4135e1a.jpg"
+        alt=""
+      />
+
+      <img
+        src="../../../assets/WhatsApp Image 2024-06-04 at 22.07.43_af0be7a5.jpg"
+        alt=""
+      />
+
+      <img
+        src="../../../assets/WhatsApp Image 2024-06-04 at 22.07.44_babf9ede.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+</section>

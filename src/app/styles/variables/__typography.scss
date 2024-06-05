@@ -1,0 +1,56 @@
+:root {
+  --font-family: "Raleway", sans-serif;
+  --header-font-family: "Roboto Slab", serif;
+  --font-size: 1rem;
+  --header-font-size: 2rem;
+  --line-height: 1.7;
+  --opacity: 0.8;
+  --header-line-height: 1.2;
+  --header-font-weight: 600;
+  --max-length: 20ch;
+}
+
+.txt-cntr {
+  text-align: center;
+}
+
+.header-txt {
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+  font-size: var(--header-font-size);
+  line-height: var(--header-line-height);
+  text-transform: uppercase;
+}
+
+.sub-header-txt {
+  font-family: var(--header-font-family);
+  font-size: calc(var(--header-font-size) * 0.66);
+  line-height: var(--header-line-height);
+  text-transform: uppercase;
+}
+
+.normal-txt {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  max-width: var(--max-length) !important;
+  opacity: var(--opacity);
+}
+
+.highlight-txt {
+  font-size: var(--font-size);
+  font-weight: var(--header-font-weight);
+  line-height: var(--line-height);
+  max-width: var(--max-length);
+}
+
+.main-txt {
+  color: var(--main-clr);
+}
+
+.sec-txt {
+  color: var(--secondary-clr);
+}
+
+.light-txt {
+  color: var (--white-clr);
+}

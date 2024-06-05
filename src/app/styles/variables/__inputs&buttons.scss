@@ -1,0 +1,89 @@
+:root {
+  --border-radius: 2px;
+  --padding: 0.5rem 1rem;
+  --border: 2px solid;
+  --shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  --hover-background: rgb(237, 237, 237);
+  --gap: 1rem;
+}
+button {
+  border: var(--border);
+  border-color: transparent;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background-color: transparent;
+  &:hover {
+    cursor: pointer;
+    border: var(--border);
+    background-color: var(--hover-background);
+  }
+}
+
+.btn-container {
+  display: flex;
+  gap: var(--gap);
+}
+
+.main-btn {
+  border-color: var(--main-clr);
+  color: var(--main-clr);
+  &:hover {
+    color: var(--dark-clr);
+  }
+}
+
+.sec-btn {
+  background-color: var(--dark-clr);
+  color: var(--main-clr);
+
+  &:hover {
+    border-color: var(--dark-clr);
+    color: var(--dark-clr);
+  }
+}
+
+.disabled-btn {
+  background-color: var(--grey-400);
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+form {
+  margin-inline: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background-color: var(--white-clr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  max-width: 600px;
+}
+
+label {
+  opacity: var(--opacity);
+  font-size: 1rem;
+  padding: 0 0 1rem 0;
+}
+
+input,
+textarea {
+  border: var(--border);
+  border-color: transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--grey-200);
+  box-shadow: var(--shadow);
+  padding: var(--padding);
+  width: 80%;
+  max-width: 400px;
+  &:hover,
+  &:focus {
+    border-color: var(--main-clr);
+    outline-style: none;
+    box-shadow: none;
+  }
+}

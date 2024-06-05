@@ -1,0 +1,77 @@
+.main-page-header {
+  height: calc(100svh - 5rem);
+  background-color: var(--dark-clr);
+  color: var(--white-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.services {
+  text-align: center;
+
+  width: 100vw;
+  .cards-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    border-radius: 2px;
+    width: min(80vw, 300px);
+    padding: 2rem 1rem;
+    box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+    .card-body {
+      text-align: start;
+    }
+  }
+}
+
+.about-us {
+  color: var(--white-clr);
+  background-color: var(--dark-clr);
+  margin-bottom: 0;
+  padding: 2rem 0;
+
+  .about-info {
+    padding-inline: 10%;
+    p {
+      max-width: 45ch;
+    }
+  }
+
+  .work-gallarey {
+    width: 100vw;
+    margin-inline: auto;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      aspect-ratio: 1;
+    }
+
+    .scroller-inner {
+      gap: 0.5rem;
+      height: 200px;
+      display: flex;
+      // overflow-x: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      animation: scroll 15s linear infinite;
+      animation-direction: alternate;
+    }
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% + 200px));
+  }
+}

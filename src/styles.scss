@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("./app/styles/variables/__colors.scss");
+@import url("./app/styles/variables/__spaces.scss");
+@import url("./app/styles/variables/__typography.scss");
+@import url("./app/styles/variables/__inputs&buttons.scss");
+
+* {
+  font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--grey-200);
+}
+
+h1,
+label {
+  padding: 0;
+  margin: 0;
+  font-weight: unset;
+}
