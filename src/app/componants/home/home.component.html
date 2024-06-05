@@ -1,6 +1,6 @@
 <header class="main-page-header">
   <div class="header-info">
-    <h1 class="header-txt mb-2">just rustic services</h1>
+    <h1 class="header-txt mtin mb-2">just rustic services</h1>
 
     <p class="normal-txt mb-4">event planing and staffing company</p>
 
@@ -8,30 +8,10 @@
   </div>
 </header>
 
-<section class="services my-4">
-  <p #services class="header-txt mb-4">Our services</p>
-
-  <div class="cards-container">
-    @for(service of servicesOferred; track service.name){
-
-    <div class="card">
-      <div class="card-header sub-header-txt mb-2">{{ service.name }}</div>
-      <div class="card-body">
-        <p class="mb-2">
-          {{ service.discription }}
-        </p>
-        <hr />
-        <p class="mt-2 mb-1">{{ service.duration }}</p>
-        <p class="mb-2">{{ service.cost }}&nbsp;ZAR</p>
-        <button class="sec-btn">book now</button>
-      </div>
-    </div>
-    }
-  </div>
-</section>
+<app-sevirces></app-sevirces>
 
 <section class="about-us my-4">
-  <p #services class="header-txt mb-2 txt-cntr">About us</p>
+  <p class="header-txt mb-2 txt-cntr">About us</p>
 
   <div class="about-info mb-4">
     <p class="normal-txt mb-2">

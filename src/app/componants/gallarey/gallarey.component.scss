@@ -1,0 +1,27 @@
+.products-header {
+  width: 100vw;
+  display: grid;
+  height: 30svh;
+  color: var(--main-clr);
+  place-items: center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 50%),
+    url("/assets/WhatsApp Image 2024-06-04 at 22.07.44_0f6e7041.jpg");
+}
+
+.products-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .product-card {
+    box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+    padding: 1rem;
+    width: 30vw;
+    max-width: 200px;
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+}

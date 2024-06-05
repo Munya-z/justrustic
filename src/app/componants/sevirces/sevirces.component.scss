@@ -1,0 +1,42 @@
+.services {
+  text-align: center;
+  margin-inline: auto;
+  width: 90vw;
+  .cards-container {
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    place-content: center;
+    justify-content: center;
+  }
+  .card {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    border-radius: 2px;
+    width: min(80vw, 200px);
+    padding: 2rem 1rem;
+    box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+    .card-body {
+      text-align: start;
+    }
+  }
+}
+
+.other-offers {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  //   align-items: center;
+
+  .offer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    max-width: 300px;
+    width: 45%;
+    color: var(--white-clr);
+    padding: 2rem;
+    text-align: left;
+    background-color: var(--dark-clr);
+  }
+}

@@ -5,39 +5,49 @@
   </div>
   <ul class="nav-links">
     <li routerLink="" routerLinkActive="active">home</li>
-    <li routerLink="services" routerLinkActive="active">services</li>
-    <li routerLink="equipment" routerLinkActive="active">equipment</li>
-    <li routerLink="products" routerLinkActive="active">products</li>
-    <li routerLink="contact-us" routerLinkActive="active">contact us</li>
+    <li routerLink="" href="#services">services</li>
+    <li routerLink="/equipment" routerLinkActive="active">equipment</li>
+    <li routerLink="/products" routerLinkActive="active">products</li>
+    <li routerLink="/contact-us" routerLinkActive="active">contact us</li>
+    <li routerLink="/gallarey" routerLinkActive="active">gallarey</li>
   </ul>
 </nav>
 
 <div class="side-nav-popup">
   <ul class="nav-links">
-    <li routerLink="" (click)="togglePopupNav()" routerLinkActive="active">
-      home
-    </li>
+    <li routerLink="" (click)="togglePopupNav()">home</li>
+    <!-- <li (click)="togglePopupNav()" routerLink="" fragment="services">
+      services
+    </li> -->
     <li (click)="togglePopupNav()" href="#services">services</li>
     <li
       (click)="togglePopupNav()"
-      routerLin="equipment"
+      routerLink="/equipment"
       routerLinkActive="active"
     >
       equipment
     </li>
     <li
       (click)="togglePopupNav()"
-      routerLink="products"
+      routerLink="/products"
       routerLinkActive="active"
     >
       products
     </li>
     <li
       (click)="togglePopupNav()"
-      routerLink="contact-us"
+      routerLink=""
+      fragment="contact"
       routerLinkActive="active"
     >
       contact us
+    </li>
+    <li
+      (click)="togglePopupNav()"
+      routerLink="/gallarey"
+      routerLinkActive="active"
+    >
+      gallarey
     </li>
   </ul>
 </div>
