@@ -3,7 +3,11 @@
 </header>
 
 <section class="products-display my-4">
-  <div class="product-card">
-    <div class="product-image"></div>
+  <div class="images-container">
+    @for(url of pictures; track url){
+    <div class="image">
+      <img src="{{ url }}" alt="{{ url }}" />
+    </div>
+    }
   </div>
 </section>

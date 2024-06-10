@@ -5,15 +5,20 @@
     @for(service of servicesOferred; track service.name){
 
     <div class="card">
-      <div class="card-header sub-header-txt mb-2">{{ service.name }}</div>
+      <div class="card-header sub-header-txt mb-1">{{ service.name }}</div>
       <div class="card-body">
-        <p class="mb-2">
+        <p class="normal-txt mb-2">
           {{ service.discription }}
         </p>
         <hr />
-        <p class="mt-2 mb-1">{{ service.duration }}</p>
-        <p class="mb-2">{{ service.cost }}&nbsp;ZAR</p>
-        <button class="sec-btn">book now</button>
+
+        <p class="highlight-txt my-2">{{ service.cost }}</p>
+        <button
+          class="sec-btn"
+          (click)="bookService(service); openDialog('order-dialog')"
+        >
+          book now
+        </button>
       </div>
     </div>
     }
@@ -24,7 +29,7 @@
   <div class="other-offers">
     <div class="offer">
       <div class="sub-header-txt">bar equipment</div>
-      <div class="normal-txt">shakes, tongs, jiggers...</div>
+      <div class="normal-txt mb-2">shakes, tongs, jiggers...</div>
       <p class="main-txt">
         checkout more&nbsp;<i class="lni lni-arrow-right-circle"></i>
       </p>
@@ -32,7 +37,7 @@
 
     <div class="offer">
       <div class="sub-header-txt">Produsts</div>
-      <div class="normal-txt">syrups and mixes</div>
+      <div class="normal-txt mb-2">syrups and mixes</div>
       <p class="main-txt">
         checkout more&nbsp;<i class="lni lni-arrow-right-circle"></i>
       </p>

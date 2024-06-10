@@ -1,0 +1,58 @@
+#order-dialog {
+  border: none;
+
+  box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+  width: 80vw;
+  max-width: 600px;
+  position: fixed;
+  top: 10vh;
+  margin: auto;
+  overflow-y: scroll;
+  height: 70vh;
+
+  .cart-container {
+  }
+  .cart-item {
+    width: 95%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+
+    .cart-item-image {
+      width: 10cqw;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  form {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+//   <div class="cart-item">
+//       <div class="cart-item-image">
+//         <img src="../assets/products/100ml Spray Bottle.png" alt="" />
+//       </div>
+//       <div class="item-info">
+//         <p class="name">name</p>
+//         <p class="price">price</p>
+//       </div>
+//       <p>remove</p>
+//     </div>
+//   </div>

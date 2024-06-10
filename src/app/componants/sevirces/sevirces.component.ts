@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OdersService } from '../../services/oders.service';
 
 @Component({
   selector: 'app-sevirces',
@@ -8,34 +9,41 @@ import { Component } from '@angular/core';
   styleUrl: './sevirces.component.scss',
 })
 export class SevircesComponent {
+  constructor(private odersService: OdersService) {}
+
+  openDialog(kind: string) {
+    this.odersService.openDialog(kind);
+  }
+
+  closeDialog(kind: string) {
+    this.odersService.closeDialog(kind);
+  }
+
+  bookService(order: any) {
+    this.odersService.bookService(order);
+  }
+
   servicesOferred = [
     {
       name: 'catering',
-      discription:
-        'we have a team of chefs, waiters and bartenders ready for all you catering needs',
-      duration: '1hr',
-      cost: '450',
+      discription: 'mobile, featuring professionally trained chefs and waiters',
+      cost: 'contact us for pricing',
     },
     {
       name: 'Event planning and coordinating',
-      discription:
-        'we have a team of chefs, waiters and bartenders ready for all you catering needs',
-      duration: '1hr',
-      cost: '650',
+      discription: 'for wedding, coporate function, or private celebrations',
+      cost: '1hr 650 ZAR',
     },
     {
       name: 'mobile bar services',
       discription:
-        'we have a team of chefs, waiters and bartenders ready for all you catering needs',
-      duration: '1hr',
-      cost: '300',
+        'Experience the rustic charm with our team of mixologists and their crafted cocktails',
+      cost: '1hr 300 ZAR',
     },
     {
       name: 'decor',
-      discription:
-        'we have a team of chefs, waiters and bartenders ready for all you catering needs',
-      duration: '',
-      cost: '4,500',
+      discription: 'for wedings, corporate events or intimate gathering',
+      cost: 'contact us for pricing',
     },
   ];
 }

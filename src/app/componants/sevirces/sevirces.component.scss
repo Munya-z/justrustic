@@ -12,7 +12,8 @@
   }
   .card {
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 0.8fr 2fr;
+
     border-radius: 2px;
     width: min(80vw, 200px);
     padding: 2rem 1rem;
@@ -26,17 +27,37 @@
 .other-offers {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   gap: 2rem;
   //   align-items: center;
 
   .offer {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 50%),
+      url("/assets/images/barbeforeStarting.jpg");
+    background-size: contain;
     display: grid;
     grid-template-rows: 1fr 1fr;
     max-width: 300px;
+    min-width: 250px;
     width: 45%;
     color: var(--white-clr);
     padding: 2rem;
     text-align: left;
-    background-color: var(--dark-clr);
+
+    &:nth-child(1) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.485),
+          black 50%
+        ),
+        url("/assets/products/Hawthorn\ Strainer\ Copper\ 20cm-UB.jpg");
+    }
+  }
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    .offer {
+      max-width: unset;
+      width: 100%;
+    }
   }
 }

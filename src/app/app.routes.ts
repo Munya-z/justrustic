@@ -11,6 +11,5 @@ export const routes: Routes = [
   { path: 'gallarey', component: GallareyComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'contact-us', component: HomeComponent },
   { path: '**', component: HomeComponent },
 ];

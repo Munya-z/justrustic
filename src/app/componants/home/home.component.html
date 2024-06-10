@@ -8,9 +8,13 @@
   </div>
 </header>
 
+<div class="big-logo">
+  <img src="../../../assets/rusticLogo.svg" alt="" />
+</div>
+
 <app-sevirces></app-sevirces>
 
-<section class="about-us my-4">
+<section #about class="about-us my-4">
   <p class="header-txt mb-2 txt-cntr">About us</p>
 
   <div class="about-info mb-4">
@@ -25,30 +29,41 @@
     <button class="main-btn">read more</button>
   </div>
 
+  @defer (on viewport(about)) {
+
   <div class="work-gallarey scroller">
     <div class="scroller-inner">
-      <img
-        src="/assets/WhatsApp Image 2024-06-04 at 22.07.06_843e3692.jpg"
-        alt=""
-      />
+      <img src="/assets/images/kiethWithHappyClient.jpg" alt="" />
 
-      <img
-        src="/assets/WhatsApp Image 2024-06-04 at 22.07.19_f4135e1a.jpg"
-        alt=""
-      />
+      <img src="/assets/images/behindTheBar.jpg" alt="" />
 
-      <img
-        src="/assets/WhatsApp Image 2024-06-04 at 22.07.43_af0be7a5.jpg"
-        alt=""
-      />
+      <img src="/assets/images/happyClient.jpg" alt="" />
 
-      <img
-        src="/assets/WhatsApp Image 2024-06-04 at 22.07.44_babf9ede.jpg"
-        alt=""
-      />
+      <img src="/assets/images/team.jpg" alt="" />
+      <img src="/assets/images/peopleEating.jpg" alt="" />
     </div>
   </div>
-  <p class="main-btn main-txt ml-4 mt-2">
+  }
+  <p class="main-txt ml-4 mt-2" routerLink="/gallarey">
     view gallarey&nbsp;<i class="lni lni-arrow-right-circle"></i>
   </p>
+</section>
+
+<section class="testinonials">
+  <h1 class="header-txt my-4 txt-cntr">testimonials</h1>
+  <div class="testimonials-container mb-4">
+    <div class="testimonial">
+      <div class="image"></div>
+
+      <div class="testimonial-body">
+        <div class="testimonial-name highlight-txt mb-1">john doe</div>
+        <div class="testimony">
+          <q class="normal-txt"
+            >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam
+            quod officiis quidem.</q
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

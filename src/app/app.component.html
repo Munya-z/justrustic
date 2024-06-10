@@ -3,3 +3,63 @@
 <div class="" style="margin-top: 4rem"></div>
 <router-outlet></router-outlet>
 <app-bottom-navigation></app-bottom-navigation>
+
+<dialog class="p-2" id="order-dialog">
+  <div class="dialog-header">
+    @if(this.odersService.getbookedService()){
+    <p class="sub-header-txt mt-4 txt-cntr">you booked</p>
+    <p class="highlight-txt txt-cntr mt-2 mb-3">
+      {{ this.odersService.getbookedService().name }}
+    </p>
+    } @if(this.odersService.cart().length > 0){
+
+    <p class="sub-header-txt txt-cntr">your cart</p>
+    <div class="cart-container mb-4">
+      @for (item of this.odersService.cart(); track $index) {
+
+      <div class="cart-item">
+        <div class="cart-item-image">
+          <img src="{{ item.image }}" alt="" />
+        </div>
+        <div class="item-info">
+          <p class="name normal-txt">{{ item.name }}</p>
+          <p class="price highlight-txt">{{ item.price }}ZAR</p>
+        </div>
+        <p class="highlight-txt" (click)="removeFromCart(item)">
+          <i class="lni lni-trash-can"></i>
+        </p>
+      </div>
+      }
+    </div>
+    }
+  </div>
+
+  <p class="sub-header-txt txt-cntr mb-4">Enter your info here</p>
+
+  <p class="close" (click)="closeDialog('order-dialog')">
+    <i class="lni lni-close"></i>
+  </p>
+  <form>
+    <label class="normal-txt my-1" for="name">Name</label>
+    <input class="mb-2" name="name" type="text" id="name" />
+    <label class="normal-txt my-1" for="phone">Phone</label>
+    <input class="mb-2" name="phone" type="phone" id="phone" />
+    <label class="normal-txt my-1" for="email">Email</label>
+    <input class="mb-2" name="email" type="email" id="email" />
+    <label class="normal-txt my-1" name="address" for="address">Address</label>
+    <input class="mb-2" type="text" id="address" />
+    <label class="normal-txt my-1" for="notes">additional message</label>
+    <textarea class="mb-2" name="notes" id="" cols="30" rows="10"></textarea>
+    <p class="normal-txt txt-cntr my-4">
+      all further communication will be done via email. Check your emails for
+      sales&#64;justrustic.co.za, thank you
+    </p>
+    <button
+      type="submit"
+      (click)="closeDialog('order-dialog')"
+      class="sec-btn mb-4"
+    >
+      send order
+    </button>
+  </form>
+</dialog>

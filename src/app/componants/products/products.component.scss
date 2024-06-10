@@ -4,8 +4,9 @@
   height: 30svh;
   color: var(--main-clr);
   place-items: center;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 50%),
-    url("/assets/WhatsApp Image 2024-06-04 at 22.07.44_0f6e7041.jpg");
+  background-position: bottom center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 80%),
+    url("../../../assets/images/kiethWithHappyClient.jpg");
 }
 
 .products-display {

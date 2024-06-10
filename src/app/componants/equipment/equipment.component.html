@@ -3,9 +3,29 @@
 </header>
 
 <section class="products-display my-4">
+  @for(item of equipment; track item.name){
+
   <div class="product-card">
-    <div class="product-image"></div>
-    <div class="product-name sub-header-txt my-2">spoon</div>
-    <button class="sec-btn">oder now</button>
+    <div class="product-image">
+      <img src="{{ item.image }}" alt="{{ item.name }}" />
+    </div>
+    <div class="product-name highlight-txt m-2">
+      {{ item.name }}
+    </div>
+    @if(item.price){
+
+    <p class="sub-header-txt mb-2 ml-2">{{ item.price }} ZAR</p>
+    <button class="sec-btn ml-2 mb-2" (click)="addToCart(item)">
+      add to cart
+    </button>
+    }@else {
+    <p class="normal-txt mb-2 ml-2">coming soon...</p>
+    }
   </div>
+  }
 </section>
+
+@if(this.odersService.cart().length > 0){
+<button class="checkout" (click)="openDialog('order-dialog')">checkout</button>
+
+}

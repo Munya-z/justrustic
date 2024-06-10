@@ -1,14 +1,14 @@
 <nav>
-  <img src="assets/rusticLogoColor.svg" alt="logo" />
+  <img src="assets/minimal-logo.png" alt="logo" />
   <div class="dropdown-toggler" (click)="togglePopupNav()">
     <i class="lni lni-menu"></i>
   </div>
   <ul class="nav-links">
-    <li routerLink="" routerLinkActive="active">home</li>
+    <li routerLink="/">home</li>
     <li routerLink="" href="#services">services</li>
     <li routerLink="/equipment" routerLinkActive="active">equipment</li>
     <li routerLink="/products" routerLinkActive="active">products</li>
-    <li routerLink="/contact-us" routerLinkActive="active">contact us</li>
+    <li routerLink="/about-us" routerLinkActive="active">about us</li>
     <li routerLink="/gallarey" routerLinkActive="active">gallarey</li>
   </ul>
 </nav>
@@ -36,11 +36,10 @@
     </li>
     <li
       (click)="togglePopupNav()"
-      routerLink=""
-      fragment="contact"
+      routerLink="about-us"
       routerLinkActive="active"
     >
-      contact us
+      about us
     </li>
     <li
       (click)="togglePopupNav()"
