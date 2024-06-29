@@ -1,0 +1,37 @@
+.cart-item {
+  width: 80vw;
+  max-width: 500px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+
+  .cart-item-image {
+    width: 10cqw;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.item-info {
+  width: 80vw;
+  max-width: 500px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form {
+  max-width: unset;
+  width: 100%;
+}

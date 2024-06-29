@@ -1,0 +1,34 @@
+<app-main-pageheader></app-main-pageheader>
+<div class="big-logo">
+  <img src="../../../assets/rusticLogo.svg" alt="" />
+</div>
+
+<section id="services">
+  <app-services></app-services>
+</section>
+
+<section #about class="about-us my-4">
+  <p class="header-txt mb-2 txt-cntr">About us</p>
+
+  <div class="about-info mb-4">
+    <p class="normal-txt mb-2">
+      Just Rustic Services is a full-service Event Planning Company dedicated to
+      creating unforgettable experiences for a wide range of events. Our
+      experienced team combines creativity with expertise to deliver exceptional
+      service, transforming venues and providing your guests with truly unique
+      experiences. Contact us so we can start working together to plan your
+      perfect event.
+    </p>
+    <button class="main-btn" routerLink="/about-us">read more</button>
+  </div>
+
+  <!-- @defer (on viewport(about)) { -->
+  <app-scolling-imgs></app-scolling-imgs>
+
+  <!-- } -->
+  <p class="main-txt ml-4 mt-2" routerLink="/gallarey">
+    view gallarey&nbsp;<i class="lni lni-arrow-right-circle"></i>
+  </p>
+</section>
+
+<app-testimonial></app-testimonial>

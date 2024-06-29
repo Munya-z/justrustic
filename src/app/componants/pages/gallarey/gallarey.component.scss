@@ -1,0 +1,38 @@
+.products-display {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .images-container {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    .image {
+      max-width: 200px;
+    }
+    img {
+      box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      &:hover {
+        box-shadow: 1px 1px 5px color-mix(in lch, var(--main-clr) 90%, #fff);
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .image {
+        width: 80vw;
+        img {
+          aspect-ratio: unset;
+        }
+      }
+    }
+  }
+}

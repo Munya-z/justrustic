@@ -1,0 +1,14 @@
+.testinonials {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+  padding: 10%;
+
+  .testimonial {
+    max-width: 400px;
+    margin-inline: auto;
+    .testimonial-name {
+      text-transform: capitalize;
+    }
+  }
+}

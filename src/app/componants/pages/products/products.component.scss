@@ -1,0 +1,17 @@
+.products-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .product-card {
+    box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
+    padding: 1rem;
+    width: 30vw;
+    max-width: 200px;
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+}

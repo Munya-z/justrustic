@@ -1,0 +1,63 @@
+<app-secondary-pageheader [pageOpened]="title"></app-secondary-pageheader>
+
+<div class="dialog-header">
+  @if(this.odersService.bookedService().length > 0){
+  <p class="sub-header-txt mt-4 txt-cntr">you booked</p>
+  @for (item of this.odersService.bookedService(); track $index) {
+
+  <div class="item-info">
+    <p class="highlight-txt txt-cntr mt-2 mb-3">
+      {{ item }}
+    </p>
+    <p class="highlight-txt" (click)="removeFromCart(item, true)">
+      <i class="lni lni-trash-can"></i>
+    </p>
+  </div>
+  } } @if(this.odersService.cart().length > 0){
+
+  <p class="sub-header-txt txt-cntr">your cart</p>
+  <div class="cart-container mb-4">
+    @for (item of this.odersService.cart(); track $index) {
+
+    <div class="cart-item">
+      <div class="cart-item-image">
+        <img src="{{ item.image }}" alt="" />
+      </div>
+      <div class="item-">
+        <p class="name normal-txt">{{ item.name }}</p>
+        <p class="price highlight-txt">{{ item.price }}ZAR</p>
+      </div>
+      <p class="highlight-txt" (click)="removeFromCart(item)">
+        <i class="lni lni-trash-can"></i>
+      </p>
+    </div>
+    }
+  </div>
+  }
+</div>
+
+<p class="sub-header-txt txt-cntr mb-4">Enter your info here</p>
+
+<form [formGroup]="oderForm">
+  <label class="normal-txt my-1" for="name">Name</label>
+  <input class="mb-2" formControlName="name" type="text" id="name" />
+  <label class="normal-txt my-1" for="phone">Phone</label>
+  <input class="mb-2" formControlName="phone" type="phone" id="phone" />
+  <label class="normal-txt my-1" for="email">Email</label>
+  <input class="mb-2" formControlName="email" type="email" id="email" />
+  <label class="normal-txt my-1" for="address">Address</label>
+  <input class="mb-2" formControlName="address" type="text" id="address" />
+  <label class="normal-txt my-1" for="notes">additional message</label>
+  <textarea
+    class="mb-2"
+    formControlName="notes"
+    id=""
+    cols="30"
+    rows="10"
+  ></textarea>
+  <p class="normal-txt txt-cntr my-4">
+    all further communication will be done via email. Check your emails for
+    {{ this.odersService.emailtosendto() }}, thank you
+  </p>
+  <button (click)="sendEmail($event)" class="sec-btn mb-4">send order</button>
+</form>

@@ -1,0 +1,39 @@
+.main-page-header {
+  margin: 0;
+  height: calc(100svh - 5rem);
+  // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 50%),
+  //   url("/assets/images/foodOnTable.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: pulse 20s ease-in-out infinite;
+
+  .header-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 80%),
+      url("/assets/images/foodOnTable.jpg");
+  }
+  30% {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 80%),
+      url("../../../../assets/images/chikenAndCarrots.jpg");
+  }
+
+  70% {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.485), black 80%),
+      url("../../../../assets/images/dessert.jpg");
+  }
+}

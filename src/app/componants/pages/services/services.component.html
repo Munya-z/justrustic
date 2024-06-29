@@ -1,0 +1,86 @@
+<section #services class="services my-4">
+  <p id="services" class="header-txt mb-4">Our services</p>
+
+  <div class="cards-container">
+    <div class="card">
+      <div class="card-header sub-header-txt mb-1">catering</div>
+      <div class="card-body">
+        <p class="normal-txt mb-2">
+          mobile, featuring professionally trained chefs and waiters
+        </p>
+        <hr />
+
+        <p class="highlight-txt my-2">contact us for pricing</p>
+        <button class="sec-btn" (click)="bookService('catering')">
+          book now
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header sub-header-txt mb-1">
+        Event planning and coordinating
+      </div>
+      <div class="card-body">
+        <p class="normal-txt mb-2">
+          for wedding, coporate function, or private celebrations
+        </p>
+        <hr />
+
+        <p class="highlight-txt my-2">contact us for pricing</p>
+        <button
+          class="sec-btn"
+          (click)="bookService('Event planning and coordinating')"
+        >
+          book now
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header sub-header-txt mb-1">mobile bar services</div>
+      <div class="card-body">
+        <p class="normal-txt mb-2">
+          Experience the rustic charm with our team of mixologists and their
+          crafted cocktails
+        </p>
+        <hr />
+
+        <p class="highlight-txt my-2">1hr 300 ZAR</p>
+        <button class="sec-btn" (click)="bookService('mobile bar services')">
+          book now
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header sub-header-txt mb-1">decor</div>
+      <div class="card-body">
+        <p class="normal-txt mb-2">
+          for wedings, corporate events or intimate gathering
+        </p>
+        <hr />
+
+        <p class="highlight-txt my-2">contact us for pricing</p>
+        <button class="sec-btn" (click)="bookService('decor')">book now</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="sub-header-txt my-4">we also offer</p>
+
+  <div class="other-offers">
+    <div class="offer">
+      <div class="sub-header-txt">bar equipment</div>
+      <div class="normal-txt mb-2">shakes, tongs, jiggers...</div>
+      <p class="main-txt link-txt" routerLink="/equipment">
+        checkout more&nbsp;<i class="lni lni-arrow-right-circle"></i>
+      </p>
+    </div>
+
+    <div class="offer">
+      <div class="sub-header-txt">Produsts</div>
+      <div class="normal-txt mb-2">syrups and mixes</div>
+      <p class="main-txt link-txt" routerLink="/products">
+        checkout more&nbsp;<i class="lni lni-arrow-right-circle"></i>
+      </p>
+    </div>
+  </div>
+</section>

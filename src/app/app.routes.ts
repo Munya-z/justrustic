@@ -1,9 +1,10 @@
-import { ProductsComponent } from './componants/products/products.component';
-import { HomeComponent } from './componants/home/home.component';
 import { Routes } from '@angular/router';
-import { EquipmentComponent } from './componants/equipment/equipment.component';
-import { GallareyComponent } from './componants/gallarey/gallarey.component';
-import { AboutUsComponent } from './componants/about-us/about-us.component';
+import { AboutUsComponent } from './componants/pages/about-us/about-us.component';
+import { EquipmentComponent } from './componants/pages/equipment/equipment.component';
+import { GallareyComponent } from './componants/pages/gallarey/gallarey.component';
+import { HomeComponent } from './componants/pages/home/home.component';
+import { ProductsComponent } from './componants/pages/products/products.component';
+import { ContactFormComponent } from './componants/contact-form/contact-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,5 +12,7 @@ export const routes: Routes = [
   { path: 'gallarey', component: GallareyComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'booking', component: ContactFormComponent },
+  { path: 'ordering', component: ContactFormComponent },
   { path: '**', component: HomeComponent },
 ];

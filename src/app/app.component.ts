@@ -1,9 +1,21 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { TopNavigationComponent } from './componants/top-navigation/top-navigation.component';
-import { BottomNavigationComponent } from './componants/bottom-navigation/bottom-navigation.component';
+import {
+  RouterOutlet,
+  Router,
+  NavigationEnd,
+  ActivatedRoute,
+} from '@angular/router';
 import { OdersService } from './services/oders.service';
+import { BottomNavigationComponent } from './componants/navigation/bottom-navigation/bottom-navigation.component';
+import { TopNavigationComponent } from './componants/navigation/top-navigation/top-navigation.component';
+import { HttpClient } from '@angular/common/http';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,21 +25,34 @@ import { OdersService } from './services/oders.service';
     RouterOutlet,
     TopNavigationComponent,
     BottomNavigationComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(public odersService: OdersService) {
+  activeRoute: ActivatedRoute = inject(ActivatedRoute);
+  scrollers = document.querySelectorAll<HTMLElement>('.scroller');
+
+  constructor(
+    public odersService: OdersService,
+    private router: Router,
+    private http: HttpClient
+  ) {}
+
+  ngOnInit() {
     sessionStorage.setItem('cart', JSON.stringify([]));
+    sessionStorage.setItem('serviceBooked', JSON.stringify([]));
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.activeRoute.fragment.subscribe((data) => {
+          if (data! != null) {
+            return;
+          } else {
+            window.scrollTo(0, 0);
+          }
+        });
+      }
+    });
   }
-  closeDialog(arg0: string) {
-    this.odersService.closeDialog(arg0);
-  }
-
-  removeFromCart(arg0: any) {
-    this.odersService.removeFromCart(arg0);
-  }
-
-  title = 'fds';
 }

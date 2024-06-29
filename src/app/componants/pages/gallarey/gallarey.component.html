@@ -1,0 +1,11 @@
+<app-secondary-pageheader [pageOpened]="title"></app-secondary-pageheader>
+
+<section class="products-display my-4">
+  <div class="images-container">
+    @for(url of pictures; track url){
+    <div class="image">
+      <img src="{{ url }}" alt="{{ url }}" />
+    </div>
+    }
+  </div>
+</section>

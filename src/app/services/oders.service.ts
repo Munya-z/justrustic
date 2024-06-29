@@ -6,10 +6,15 @@ import { Injectable, signal } from '@angular/core';
 export class OdersService {
   constructor() {}
 
-  cart = signal(JSON.parse(sessionStorage.getItem('cart') as string) || '[]');
+  cart = signal(JSON.parse(sessionStorage.getItem('cart') as string) || '');
+  emailtosendto = signal('');
+  bookedService = signal(
+    JSON.parse(sessionStorage.getItem('serviceBooked') as string) || ''
+  );
 
-  openDialog(kind: string) {
+  openDialog(kind: string, mailTo: string) {
     const dialogWindow = document.getElementById(kind) as HTMLDialogElement;
+    this.emailtosendto.set(mailTo);
     dialogWindow?.showModal();
   }
 
@@ -18,12 +23,17 @@ export class OdersService {
     dialogWindow?.close();
   }
 
-  getbookedService() {
-    return JSON.parse(sessionStorage.getItem('serviceBooked') as string);
-  }
-
   bookService(service: any) {
-    sessionStorage.setItem('serviceBooked', JSON.stringify(service));
+    if (this.bookedService.length > 0) {
+      this.bookedService.update((already) => [...already, service]);
+    } else {
+      this.bookedService.update(() => [service]);
+    }
+
+    sessionStorage.setItem(
+      'serviceBooked',
+      JSON.stringify(this.bookedService())
+    );
   }
 
   addToCart(order: any) {
@@ -35,7 +45,18 @@ export class OdersService {
     sessionStorage.setItem('cart', JSON.stringify(this.cart()));
   }
 
-  removeFromCart(order: any) {
+  removeFromCart(order: any, booking?: boolean) {
+    if (booking) {
+      this.bookedService.set([]);
+
+      sessionStorage.setItem(
+        'serviceBooked',
+        JSON.stringify(this.bookedService())
+      );
+
+      return;
+    }
+
     this.cart.update((cart) =>
       cart.filter((item: { name: any }) => item.name !== order.name)
     );
