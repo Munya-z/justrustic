@@ -25,15 +25,20 @@
   0%,
   100% {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 80%),
-      url("/assets/images/foodOnTable.jpg");
+      url("/assets/images/1000037697.jpg");
+      background-position: 50%;
   }
   30% {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.485), black 80%),
-      url("../../../../assets/images/chikenAndCarrots.jpg");
+      url("/assets/images/mobileBarFromBehind.jpg");
+      background-position: 50%;
+  
   }
 
   70% {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.485), black 80%),
-      url("../../../../assets/images/dessert.jpg");
+      url("/assets/images/1000122086.jpg");
+      background-position: 50%;
+  
   }
 }

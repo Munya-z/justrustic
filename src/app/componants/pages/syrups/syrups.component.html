@@ -1,0 +1,116 @@
+<app-secondary-pageheader [pageOpened]="title"></app-secondary-pageheader>
+
+<style>
+    .header-contant{
+        width: 90vw;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+        font-size: 18px;
+        line-height: 1.6;
+
+        p{
+            max-width: 40ch ;
+            margin: 2rem 0; 
+        };
+    }
+
+    .discriptions{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        padding: 20px;
+
+    }
+    
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90vw;
+        max-width: 800px;
+        display: flex;
+        gap: 20px;
+        scroll-margin-top: 120px;
+        
+        &:nth-child(even){
+            flex-direction: row-reverse;
+        }
+
+        p{
+            max-width: 40ch ;
+            line-height: 1.5;
+            margin: 2rem 0; 
+        };
+
+        img{
+            width: 30vw;
+            min-width: 200px;
+            height: auto;   
+        }
+
+        @media screen and (max-width: 768px) {
+
+            flex-direction: column;
+            
+            &:nth-child(even){
+                /* flex-direction: row; */
+                flex-direction: column;
+            }
+
+            img{
+                width: 80vw;
+            }
+
+        }
+    }
+
+
+
+
+</style>
+
+<section class="header-contant">
+
+    <p>Syrup Safari is more than a range of syrups—it's a journey into the soul of African flavour. Founded in 2023 by The Rustic Barman, the brand was born from a bold vision: to bring Africa's rich tapestry of ingredients—its botanicals, roots, herbs, and indigenous fruits—into the world of modern mixology.</p>
+    
+    <p>Each bottle is carefully handcrafted, capturing authentic, vibrant tastes that transform ordinary drinks into memorable experiences. Refined through passion, creativity, and real-world feedback, Syrup Safari's five signature flavours have already been enjoyed and approved by over 1,500 people in just two years—a testament to both quality and originality.</p>
+
+    <p>Whether you're crafting cocktails, elevating mocktails, or simply experimenting at home, Syrup Safari invites you to explore, create, and taste Africa in every drop. Now available online, your next signature serve starts here.</p>
+
+</section>
+
+ <h1 class="header-txt " style="text-align: center;">Our Collection</h1>
+ 
+
+<section class="discriptions">
+    <div id="CitrusBurst" class="item">
+        <img src="../../../../assets/products/syrups/Baobab-Citrus-Burst-Syrup.png" alt="">
+        <div>
+            <h2>Baobab Citrus Burst Syrup</h2>
+            <p> Discover a vibrant yet comforting flavour journey with our Baobab Citrus Burst syrup. <br><br>Crafted from the natural tang of baobab and lifted with fresh grapefruit and lemon, it delivers a bright, zesty profile that awakens the palate while maintaining a smooth, rounded finish. With every sip, expect a refreshing balance of tart citrus, subtle sweetness, and a gentle, earthy depth from the baobab — creating a layered taste that lingers pleasantly.<br><br> Perfect for elevating cocktails, adding sparkle to spritzes, or bringing a sophisticated twist to mocktails, this syrup turns every drink into a refreshing, sun-kissed experience.</p>
+        </div>
+    </div>
+     <div id="BaobabElixir" class="item">
+        <img src="../../../../assets/products/syrups/Baobab-Elixir-Syrup.png" alt="">
+        <div>
+            <h2>Baobab Elixir Syrup</h2>
+            <p>Discover a syrup that captures both vibrancy and comfort in every drop.<br><br> This bright baobab blend delivers a gentle tang balanced with natural, rounded sweetness, creating a refreshing yet soothing flavour profile. When you sip it, expect a lively burst of tart fruit upfront, followed by a smooth, mellow finish that lingers pleasantly on the palate. It lifts cocktails, adds depth to mocktails, and brings a crisp, elegant twist to spritzes—turning every drink into a refined, feel-good experience</p>
+        </div>
+    </div>
+     <div id="SpicedWarmth" class="item">
+        <img src="../../../../assets/products/syrups/Baobab-Spiced-Warmth-Syrup.png" alt="">
+        <div>
+            <h2>Baobab Spiced Warmth Syrup</h2>
+            <p>Discover a syrup that wraps your senses in warmth and depth. Our Baobab Spiced Warmth syrup blends the naturally tangy richness of baobab with the gentle heat of ginger and the comforting spice of cinnamon.<br><br> With every sip, expect a smooth balance of bright, citrusy notes layered with a lingering, cozy finish that feels both refreshing and soothing. It adds complexity and character to any serve—whether you're crafting cocktails, elevating mocktails, or adding a spiced twist to a spritz. This is more than a flavor—it's a sensory experience that brings warmth, vibrancy, and a touch of African-inspired sophistication to your glass</p>
+        </div>
+    </div>
+     <div id="MasauElixir" class="item">
+        <img src="../../../../assets/products/syrups/Masau-Elixir-Syrup.png" alt="">
+        <div>
+            <h2>Masau Elixir Syrup</h2>
+            <p>Experience the comforting embrace of a vibrant, sweet-tart syrup made from sun-ripened Masau. Bright and refreshing with subtle citrus notes, a hint of tropical fruit, and a smooth, lingering finish—perfectly suited for cocktails, mocktails, and uplifting spritzes.</p>
+        </div>
+    </div>
+</section>

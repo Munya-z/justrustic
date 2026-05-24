@@ -1,11 +1,16 @@
 <section class="testinonials">
-  <h1 class="header-txt my-4 txt-cntr">testimonials</h1>
-  <div class="testimonials-container mb-4">
+  <h1 class="header-txt my-4 txt-cntr" >testimonials</h1>
+  <div class="dots-container">
+    @for (item of testimonials; track $index) {
+    <span class="dot" [class.active]="activeIndex === $index"></span>
+  }
+  </div>
+  <div class="testimonials-container mb-4" (scroll)="updateDots($event)">
     <div class="testimonial">
       <div class="testimonial-body">
         <div class="testimonial-name highlight-txt mb-1">Linél Malan-Storm</div>
         <div class="testimony">
-          <q class="normal-txt"
+          <p class="normal-txt"
             >We used Just Rustic to host a corporate event at our office in
             Illovo. We ere blown away about their level of staff, attention to
             detail and willingness to go the extra mile where needed. We
@@ -17,10 +22,48 @@
             management, waiter service and recently started using their chef as
             well. They are friendly and easy to work with. I can highly
             recommend their services –
-            <span class="highlight-txt">thank you Keith and Team.</span></q
-          >
+            <span class="highlight-txt">thank you Keith and Team.</span>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-body">
+        <div class="testimonial-name highlight-txt mb-1">Tyler den Heyer</div>
+        <div class="testimony">
+          <p class="normal-txt">
+            Amazing Experience!<br/> <br/>
+            The Just Rustic team was monumental in making my wedding day a success.
+
+            Their level of service is exceptional. Everything we asked for was provided and more.
+
+            <span class="highlight-txt">Keith and his whole team are just amazing people and I couldn't recommend them more!</span>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-body">
+        <div class="testimonial-name highlight-txt mb-1">Sicelo David Sibanda</div>
+        <div class="testimony">
+          <p class="normal-txt">
+            Keith and your team thank you, is all I have to say.
+            My family and friends enjoyed the whole event cause of the service you offered. Just awesome.
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-body">
+        <div class="testimonial-name highlight-txt mb-1">Ronald Claude Forssman</div>
+        <div class="testimony">
+          <p class="normal-txt">
+              Excellent service and very friendly. Would definitely recommend
+            </p>
         </div>
       </div>
     </div>
   </div>
+
+  
 </section>

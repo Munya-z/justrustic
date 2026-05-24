@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { SyrupsComponent } from './syrups.component';
+
+describe('SyrupsComponent', () => {
+  let component: SyrupsComponent;
+  let fixture: ComponentFixture<SyrupsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SyrupsComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(SyrupsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -10,11 +10,10 @@ import { SecondaryPageheaderComponent } from '../pageHeaders/secondary-pageheade
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-contact-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, SecondaryPageheaderComponent],
-  templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss',
+    selector: 'app-contact-form',
+    imports: [ReactiveFormsModule, SecondaryPageheaderComponent],
+    templateUrl: './contact-form.component.html',
+    styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
   title = 'send us an email';
@@ -39,12 +38,17 @@ export class ContactFormComponent {
   sendEmail(event: Event) {
     event.preventDefault();
 
+     let mailToEmail: string;
     if (this.oderForm.valid) {
+     
       const emailData = {
         clientInfo: this.oderForm.value,
         cart: this.odersService.cart(),
         serviceBooked: this.odersService.bookedService(),
       };
+
+      console.log(emailData)
+
       this.http.post('/php/getAQuote.php', emailData).subscribe(
         (data) => {
           console.log(data);
@@ -53,7 +57,7 @@ export class ContactFormComponent {
           console.log(err);
         }
       );
-      console.log(emailData);
+      // console.log(emailData);
     }
   }
 }

@@ -1,8 +1,30 @@
 <app-secondary-pageheader [pageOpened]="title"></app-secondary-pageheader>
 
 <h1 class="sub-header-txt txt-cntr mt-4">Syrups</h1>
+  <div class="dots-container">
+    @for (item of syrups; track $index) {
+    <span class="dot" [class.active]="activeSyrupIndex === $index"></span>
+  }
+  </div>
 <section class="products-display">
-  <p class="highlight-txt txt-cntr my-2">coming soon...</p>
+  <div class="card-container mt-2" (scroll)="updateSyrupDots($event)">
+    <div class="card">
+      <img routerLink="/syrups" fragment="CitrusBurst" src="assets/products/syrups/Baobab-Citrus-Burst-Syrup.png" alt="Baobab Citrus Burst Syrup" class="product-image ">
+      <h3 class="product-name highlight-txt txt-cntr mt-2">Baobab Citrus Burst Syrup</h3>
+    </div>
+    <div class="card">
+      <img routerLink="/syrups" fragment="BaobabElixir" src="assets/products/syrups/Baobab-Elixir-Syrup.png" alt="Baobab Elixir Syrup" class="product-image ">
+      <h3 class="product-name highlight-txt txt-cntr mt-2">Baobab Elixir Syrup</h3>
+    </div>
+    <div class="card">
+      <img routerLink="/syrups" fragment="MasauElixir" src="assets/products/syrups/Masau-Elixir-Syrup.png" alt="Masau Elixir Syrup" class="product-image ">
+      <h3 class="product-name highlight-txt txt-cntr mt-2">Masau Elixir Syrup</h3>
+    </div>
+    <div class="card">
+      <img routerLink="/syrups" fragment="SpicedWarmth" src="assets/products/syrups/Baobab-Spiced-Warmth-Syrup.png" alt="Baobab Spiced Warmth Syrup" class="product-image ">
+      <h3 class="product-name highlight-txt txt-cntr mt-2">Baobab Spiced Warmth Syrup</h3>
+    </div>
+  </div>
 </section>
 
 <h1 class="sub-header-txt txt-cntr mt-4">mixes</h1>

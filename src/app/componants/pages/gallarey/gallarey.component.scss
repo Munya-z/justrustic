@@ -3,36 +3,30 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center;   
+  }
 
-  .images-container {
-    margin: 0 auto;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    gap: 1rem;
-    .image {
-      max-width: 200px;
-    }
+
+.images-container {
+  column-count: 3; /* Divide into 3 columns */
+  column-gap: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+
+  .image {
+    break-inside: avoid; /* Prevents image from splitting across columns */
+    margin-bottom: 1.5rem;
+    
     img {
-      box-shadow: 1px 1px 5px color-mix(in lch, var(--dark-clr), #fff);
       width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      &:hover {
-        box-shadow: 1px 1px 5px color-mix(in lch, var(--main-clr) 90%, #fff);
-      }
+      height: auto;
     }
+  }
 
-    @media screen and (max-width: 400px) {
-      .image {
-        width: 80vw;
-        img {
-          aspect-ratio: unset;
-        }
-      }
-    }
+  @media (max-width: 768px) {
+    column-count: 2;
+  }
+  @media (max-width: 480px) {
+    column-count: 1;
   }
 }

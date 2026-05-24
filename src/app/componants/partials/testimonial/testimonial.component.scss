@@ -1,14 +1,103 @@
 .testinonials {
   display: flex;
-  place-content: center;
   flex-direction: column;
-  padding: 10%;
+  padding: 5% 0; /* Reduced side padding to allow cards to reach edges */
+  
+  .testimonials-container {
+    width: 95vw;
+    max-width: 800px; /* Increased to show more cards if screen is wide */
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    
+    /* Crucial for horizontal scroll */
+    overflow-x: auto; 
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    
+    /* Adds the "snap" effect */
+    scroll-snap-type: x mandatory; 
+    
+    /* Hide scrollbar for a cleaner look (optional) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   .testimonial {
-    max-width: 400px;
-    margin-inline: auto;
+    /* Prevent shrinking and set fixed width */
+    flex: 0 0 350px; 
+    padding: 2rem;
+    box-shadow: 10px 5px 15px rgba(0,0,0,0.1);
+    scroll-snap-align: center; /* Snaps card to center */
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(odd) {
+      background-color: rgb(240, 240, 240);
+      border-radius: 5px;
+    }
+
+    &:nth-child(even) {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      
+      .highlight-txt {
+        color: var(--primary-clr, #daa520); /* Ensure highlight is visible on black */
+      }
+    }
+
     .testimonial-name {
       text-transform: capitalize;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    
+  }
+}
+
+/* Mobile Adjustment */
+@media screen and (max-width: 500px) {
+  .testinonials .testimonial {
+    flex: 0 0 85vw; /* Almost full width on mobile */
+  }
+}
+
+// .testimonials-container::-webkit-scrollbar {
+//   display: block; /* Show it */
+//   height: 6px;
+// }
+// .testimonials-container::-webkit-scrollbar-thumb {
+//   background: var(--primary-clr, #daa520);
+//   border-radius: 10px;
+// }
+// .testimonials-container::-webkit-scrollbar-track {
+//   background: #eee;
+// }
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &.active {
+      background-color: var(--primary-clr, #daa520); /* Match your brand color */
+      transform: scale(1.2);
     }
   }
 }

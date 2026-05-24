@@ -4,11 +4,10 @@ import { SecondaryPageheaderComponent } from '../../pageHeaders/secondary-pagehe
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-equipment',
-  standalone: true,
-  imports: [SecondaryPageheaderComponent],
-  templateUrl: './equipment.component.html',
-  styleUrl: './equipment.component.scss',
+    selector: 'app-equipment',
+    imports: [SecondaryPageheaderComponent],
+    templateUrl: './equipment.component.html',
+    styleUrl: './equipment.component.scss'
 })
 export class EquipmentComponent {
   title = 'Equipment';

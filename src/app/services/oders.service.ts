@@ -1,16 +1,30 @@
-import { Injectable, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { afterNextRender, Inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OdersService {
-  constructor() {}
+  // constructor() {}
+  private isBrowser!: boolean
+  cart = signal<any>([]);
+  bookedService = signal<any>([]);
 
-  cart = signal(JSON.parse(sessionStorage.getItem('cart') as string) || '');
+
+constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  this.isBrowser = isPlatformBrowser(platformId)
+
+  afterNextRender(() => {
+    if (this.isBrowser) {
+      this.cart.set(JSON.parse(sessionStorage.getItem('cart') as string) || '');
+      this.bookedService.set(JSON.parse(sessionStorage.getItem('serviceBooked') as string) || '');
+    }
+  })
+}
+
+
   emailtosendto = signal('');
-  bookedService = signal(
-    JSON.parse(sessionStorage.getItem('serviceBooked') as string) || ''
-  );
+
 
   openDialog(kind: string, mailTo: string) {
     const dialogWindow = document.getElementById(kind) as HTMLDialogElement;
@@ -29,11 +43,12 @@ export class OdersService {
     } else {
       this.bookedService.update(() => [service]);
     }
-
-    sessionStorage.setItem(
-      'serviceBooked',
-      JSON.stringify(this.bookedService())
-    );
+    if(this.isBrowser){
+      sessionStorage.setItem(
+        'serviceBooked',
+        JSON.stringify(this.bookedService())
+      );
+    }
   }
 
   addToCart(order: any) {
@@ -42,17 +57,20 @@ export class OdersService {
     } else {
       this.cart.update(() => [order]);
     }
+    if(this.isBrowser){
     sessionStorage.setItem('cart', JSON.stringify(this.cart()));
+    }
   }
 
   removeFromCart(order: any, booking?: boolean) {
     if (booking) {
       this.bookedService.set([]);
-
+      if(this.isBrowser){
       sessionStorage.setItem(
         'serviceBooked',
         JSON.stringify(this.bookedService())
       );
+    }
 
       return;
     }
@@ -60,7 +78,8 @@ export class OdersService {
     this.cart.update((cart) =>
       cart.filter((item: { name: any }) => item.name !== order.name)
     );
-
-    sessionStorage.setItem('cart', JSON.stringify(this.cart()));
+    if(this.isBrowser){
+    sessionStorage.setItem('cart', JSON.stringify(this.cart()))
+  }
   }
 }
